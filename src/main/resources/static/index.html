@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Player</title>
+    <style>
+        body {
+            background-color: #2b2a3d; /* Dark purple background */
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .player {
+            background-color: #3c3b51; /* Semi-dark purple */
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+        .track-list {
+            margin-top: 15px;
+            text-align: left;
+        }
+        .track-list a {
+            color: #a5a4c6;
+            text-decoration: none;
+        }
+        .track-list a:hover {
+            color: #ffffff;
+        }
+        audio {
+            width: 100%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="player">
+    <h2>Web Radio Player</h2>
+    <div class="track-list">
+        <h4>Playlist</h4>
+        <ul>
+            <li><a href="/mp3/Hany Shaker - Arabny Leek هاني شاكر - قربني ليك.mp3">Hany Shaker - Arabny Leek</a></li>
+            <li><a href="/mp3/عمر كمال .. موال انا قد الظروف  لاول مرة كلام من القلب   انا مبخسرش .. انا اتعلمت.mp3">Amr Kamal - Moawal Ana Qad El Zorouf</a></li>
+            <li><a href="/mp3/غلطتي سوء إختياري , غلطة الشاطر بألف ديانا حداد Diana Haddad.mp3">Diana Haddad - Ghalteti Soo Ekhtyari</a></li>
+        </ul>
+    </div>
+    <audio controls id="audioPlayer">
+        <source src="" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+</div>
+
+<script>
+    const audioPlayer = document.getElementById('audioPlayer');
+    const trackLinks = document.querySelectorAll('.track-list a');
+
+    trackLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            audioPlayer.src = this.href;
+            audioPlayer.play();
+        });
+    });
+</script>
+</body>
+</html>
