@@ -19,5 +19,8 @@ This project is a web radio player built with Java Spring Boot. It provides a da
 
 1. **Clone the Repository** (if not already done)
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/mahsel79/MusicBox.git
    cd MusicBox
+   mvn clean install
+   java -jar target/MusicBox-0.0.1-SNAPSHOT.jar
+   

@@ -10,3 +10,5 @@ Before starting, ensure your system packages are up-to-date.
 
 ```bash
 sudo apt update && sudo apt upgrade -y
+sudo apt install -y openjdk-21-jdk
+
