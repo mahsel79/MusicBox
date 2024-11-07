@@ -1,4 +1,4 @@
-# MusicBox Web Radio Player
+## MusicBox Web Radio Player
 
 This project is a web radio player built with Java Spring Boot. It provides a dark-themed interface with a playlist, allowing users to play MP3 files hosted on the server.
 
@@ -7,7 +7,7 @@ This project is a web radio player built with Java Spring Boot. It provides a da
 1. **Java 21** - Ensure that Java 21 or later is installed on your server.
 2. **Maven** - Required to build the Spring Boot application.
 3. **Nginx** - Installed and configured as the web server.
-4. **Domain** - Set up DNS for `music.selman.work` pointing to the server.
+4. **Domain** - Set up DNS for `music.domain.com` pointing to the server.
 
 ## Project Structure
 
@@ -24,3 +24,8 @@ This project is a web radio player built with Java Spring Boot. It provides a da
    mvn clean install
    java -jar target/MusicBox-0.0.1-SNAPSHOT.jar
    
+ 
+## Locate the build target jar file
+
+```bash
+target/MusicBox-0.0.1-SNAPSHOT.jar
