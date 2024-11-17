@@ -23,7 +23,7 @@ body {
     text-align: left;
     padding-bottom: 10px;
     font-size: 14px;
-    max-height: 300px; /* Restrict height of the playlist */
+    max-height: 455px; /* Restrict height of the playlist */
     overflow-y: auto; /* Enable vertical scrolling */
 }
 .track-list li {
