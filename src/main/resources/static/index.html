@@ -3,55 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
     <title>Radio Player</title>
-    <style>
-        body {
-            background-color: #2b2a3d; /* Dark purple background */
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .player {
-            background-color: #3c3b51; /* Semi-dark purple */
-            border-radius: 10px;
-            padding: 20px;
-            width: 300px;
-            text-align: center;
-        }
-        .track-list {
-            margin-top: 15px;
-            text-align: left;
-        }
-        .track-list a {
-            color: #a5a4c6;
-            text-decoration: none;
-        }
-        .track-list a:hover {
-            color: #ffffff;
-        }
-        audio {
-            width: 100%;
-            margin-top: 10px;
-        }
-    </style>
 </head>
 <body>
 
 <div class="player">
-    <h2>Web Radio Player</h2>
-    <div class="track-list">
-        <h4>Playlist</h4>
-        <ul>
-            <li><a href="/mp3/Hany Shaker - Arabny Leek هاني شاكر - قربني ليك.mp3">Hany Shaker - Arabny Leek</a></li>
-            <li><a href="/mp3/عمر كمال .. موال انا قد الظروف  لاول مرة كلام من القلب   انا مبخسرش .. انا اتعلمت.mp3">Amr Kamal - Moawal Ana Qad El Zorouf</a></li>
-            <li><a href="/mp3/غلطتي سوء إختياري , غلطة الشاطر بألف ديانا حداد Diana Haddad.mp3">Diana Haddad - Ghalteti Soo Ekhtyari</a></li>
-        </ul>
+    <h2>Selman Radio Player</h2>
+
+    <!-- Tab navigation -->
+    <div class="tabs">
+        <button class="tab-button active" data-playlist="home">Home</button>
+        <button class="tab-button" data-playlist="car">Car</button>
+        <button class="tab-button" data-playlist="work">Work</button>
     </div>
+
+    <!-- Playlists -->
+    <div class="track-list">
+        <!-- Home Playlist -->
+        <div class="playlist" id="home">
+            <h4>Home Playlist</h4>
+            <ol>
+                <li><a href="/mp3/Home/عمر كمال .. موال انا قد الظروف  لاول مرة كلام من القلب   انا مبخسرش .. انا اتعلمت.mp3">Amr Kamal - Moawal Ana Qad El Zorouf</a></li>
+                <li><a href="/mp3/Home/Nassif Zeytoun - Ya Aachikata El Wardi.mp3">Nassif Zeytoun - Ya Aachikata El Wardi</a></li>
+                <li><a href="/mp3/Home/Nathalie.mp3">Nathalie</a></li>
+                <li><a href="/mp3/Home/Aboud Fouad - Men Kel Qalbi.mp3">Aboud Fouad - Men Kel Qalbi</a></li>
+                <li><a href="/mp3/Home/Hany Shaker-ArabnyLeek.mp3">Hany Shaker - Arabny Leek</a></li>
+                <li><a href="/mp3/Home/Basel-Najem-1.mp3">Basel Najem - Nabdi</a></li>
+                <li><a href="/mp3/Home/يانجوم السما أنزلي.mp3">Njoom Elsama</a></li>
+                <li><a href="/mp3/Home/عبود فؤاد بين ضلوعي.mp3">Bain Dloo3i</a></li>
+                <li><a href="/mp3/Home/Mohamed-Fouad-Leh.mp3">Mohammed Fouad - Leh</a></li>
+                <li><a href="/mp3/Home/Ali Al Isawi - Tefak Mrafegni.mp3">Ali Isawi - Tefak</a></li>
+                <li><a href="/mp3/Home/Noor-zain-wafit.mp3">Noor Zain - Yejiny El lail</a></li>
+                <li><a href="/mp3/Home/غلطتي سوء إختياري , غلطة الشاطر بألف ديانا حداد Diana Haddad.mp3">Diana Haddad - Ghalteti Soo Ekhtyari</a></li>
+                <li><a href="/mp3/Home/Mahmod AlGayath - Rabe Razakne.mp3">Mahmod AlGayath - Rabe Razakne</a></li>
+                <li><a href="/mp3/Home/Odai Zagha - Jorh Jded.mp3">Odai Zagha - Jorh Jded</a></li>
+                <li><a href="/mp3/Home/Donya eh.mp3">Donya Eh</a></li>
+                <li><a href="/mp3/Home/Melhem Zein - Enti Mchiti.mp3">Melhem Zein - Enti Mchiti</a></li>
+                <li><a href="/mp3/Home/Rami Bader - aakher nazrah.mp3">Rami Bader - Akher nazrah</a></li>
+                <li><a href="/mp3/Home/Ali Yagi - Mennak Ejat.mp3">Ali Yagi - Mennak Ejat</a></li>
+                <li><a href="/mp3/Home/Alghayt-Al7ob.mp3">Alghayt Al7ob - Wael</a></li>
+                <!-- Add more tracks as needed -->
+            </ol>
+        </div>
+
+        <!-- Car Playlist -->
+        <div class="playlist hidden" id="car">
+            <h4>Car Playlist</h4>
+            <ol>
+                <li><a href="/mp3/Car/Song1.mp3">Song 1</a></li>
+                <li><a href="/mp3/Car/Song2.mp3">Song 2</a></li>
+                <li><a href="/mp3/Car/Song3.mp3">Song 3</a></li>
+                <!-- Add more tracks as needed -->
+            </ol>
+        </div>
+
+        <!-- Work Playlist -->
+        <div class="playlist hidden" id="work">
+            <h4>Work Playlist</h4>
+            <ol>
+                <li><a href="/mp3/Work/Song1.mp3">Song 1</a></li>
+                <li><a href="/mp3/Work/Song2.mp3">Song 2</a></li>
+                <li><a href="/mp3/Work/Song3.mp3">Song 3</a></li>
+                <!-- Add more tracks as needed -->
+            </ol>
+        </div>
+    </div>
+
     <audio controls id="audioPlayer">
         <source src="" type="audio/mp3">
         Your browser does not support the audio element.
@@ -60,15 +79,53 @@
 
 <script>
     const audioPlayer = document.getElementById('audioPlayer');
-    const trackLinks = document.querySelectorAll('.track-list a');
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const playlists = document.querySelectorAll('.playlist');
+    let currentTrackIndex = 0;
 
-    trackLinks.forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
-            audioPlayer.src = this.href;
-            audioPlayer.play();
+    // Switch tabs
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            playlists.forEach(playlist => playlist.classList.add('hidden'));
+
+            this.classList.add('active');
+            const playlistId = this.getAttribute('data-playlist');
+            document.getElementById(playlistId).classList.remove('hidden');
         });
     });
+
+    // Load and play a specific track
+    function loadTrack(link) {
+        audioPlayer.src = link.href;
+        audioPlayer.play();
+    }
+
+    // Set up track event listeners for each playlist
+    playlists.forEach(playlist => {
+        const links = playlist.querySelectorAll('a');
+        links.forEach((link, index) => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                currentTrackIndex = index;
+                loadTrack(this);
+            });
+        });
+    });
+
+    // Auto-play next track
+    audioPlayer.addEventListener('ended', function() {
+        const activePlaylist = document.querySelector('.playlist:not(.hidden)');
+        const links = activePlaylist.querySelectorAll('a');
+        currentTrackIndex++;
+
+        if (currentTrackIndex < links.length) {
+            loadTrack(links[currentTrackIndex]);
+        } else {
+            currentTrackIndex = 0; // Optionally loop
+        }
+    });
 </script>
+
 </body>
 </html>
