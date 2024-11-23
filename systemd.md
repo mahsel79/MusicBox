@@ -4,19 +4,17 @@
 
 [Unit]
 Description=MusicBox Web Radio Player
-After=syslog.target
 
 [Service]
-User=your_user
-ExecStart=/usr/bin/java -jar /home/user/MusicBox-0.0.1-SNAPSHOT.jar
+User=www-data
+ExecStart=/usr/bin/java -jar /home/neo/MusicBox/target/webradio-0.0.1-SNAPSHOT.jar
 SuccessExitStatus=143
 Restart=on-failure
 RestartSec=10
-StandardOutput=syslog
-StandardError=syslog
 
 [Install]
 WantedBy=multi-user.target
+
 
 ```
 ### Enable and start the service
