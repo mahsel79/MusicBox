@@ -22,10 +22,11 @@ This project is a web radio player built with Java Spring Boot. It provides a da
    git clone https://github.com/mahsel79/MusicBox.git
    cd MusicBox
    mvn clean install
-   java -jar target/MusicBox-0.0.1-SNAPSHOT.jar
+   java -jar target/webradio-0.0.1-SNAPSHOT.jar
+   chown -R www-data:www-data /home/neo/MusicBox
    
  
 ## Locate the build target jar file
 
 ```bash
-target/MusicBox-0.0.1-SNAPSHOT.jar
+target/webradio-0.0.1-SNAPSHOT.jar
