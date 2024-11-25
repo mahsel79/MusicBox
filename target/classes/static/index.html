@@ -4,26 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-    <title>Radio Player</title>
+    <link rel="stylesheet" href="/style.css"> <!-- Ensure the path is correct -->
+    <title>Selman Radio Player</title>
 </head>
 <body>
-
 <div class="player">
-    <h2>Selman Radio Player</h2>
+    <h1>Selman Radio Player</h1>
 
     <!-- Tab navigation -->
-    <div class="tabs">
+    <nav class="tabs">
         <button class="tab-button active" data-playlist="home">Home</button>
         <button class="tab-button" data-playlist="car">Car</button>
         <button class="tab-button" data-playlist="work">Work</button>
-    </div>
+    </nav>
 
     <!-- Playlists -->
-    <div class="track-list">
+    <section class="track-list">
         <!-- Home Playlist -->
         <div class="playlist" id="home">
-            <h4>Home Playlist</h4>
+            <h2>Home Playlist</h2>
             <ol>
                 <li><a href="/mp3/Home/عمر كمال .. موال انا قد الظروف  لاول مرة كلام من القلب   انا مبخسرش .. انا اتعلمت.mp3">Amr Kamal - Moawal Ana Qad El Zorouf</a></li>
                 <li><a href="/mp3/Home/Nassif Zeytoun - Ya Aachikata El Wardi.mp3">Nassif Zeytoun - Ya Aachikata El Wardi</a></li>
@@ -50,22 +49,27 @@
 
         <!-- Car Playlist -->
         <div class="playlist hidden" id="car">
-            <h4>Car Playlist</h4>
+            <h2>Car Playlist</h2>
             <ol>
+                <li><a href="/mp3/Car/Lyrics -Marilyne Namaan - Hedne.mp3">Marilyne Namaan - Hedne</a></li>
+                <li><a href="/mp3/Car/Marilyne Naaman - Ale'te Maa l Fehem.mp3">Marilyne Naaman - Ale'te Maa l Fehem</a></li>
+                <li><a href="/mp3/Car/Marilyne Naaman - Baadni Aal Shatt.mp3">Marilyne Naaman - Baadni Aal Shatt</a></li>
+                <li><a href="/mp3/Car/Marilyne Naaman - Lech Ma Bterjaa_.mp3">Marilyne Naaman - Lech Ma Bterjaa</a></li>
+                <li><a href="/mp3/Car/Lyrics -Marilyne Namaan - Hedne.mp3">Marilyne Namaan - Hedne</a></li>
+                <li><a href="/mp3/Car/Lyrics -Marilyne Namaan - Hedne.mp3">Marilyne Namaan - Hedne</a></li>
+                <li><a href="/mp3/Car/Lyrics -Marilyne Namaan - Hedne.mp3">Marilyne Namaan - Hedne</a></li>
 
-                <li><a href="/mp3/Car/Song2.mp3">Song 2</a></li>
-                <li><a href="/mp3/Car/Song3.mp3">Song 3</a></li>
-                <!-- Add more tracks as needed -->
+                <!-- Add more tracks -->
             </ol>
         </div>
 
         <!-- Work Playlist -->
         <div class="playlist hidden" id="work">
-            <h4>Work Playlist</h4>
+            <h2>Work Playlist</h2>
             <ol>
                 <li><a href="/mp3/Work/Two Steps From Hell - Strength of a Thousand Men.mp3">Strength of a Thousand Men</a></li>
                 <li><a href="/mp3/Work/Two Steps From Hell - Never Back Down.mp3">Never Back Down</a></li>
-                <li><a href="/mp3/Work/Two Steps From Hell - Strength of a Thousand Men.mp3">Strength of a Thousand Men</a></li>
+                <li><a href="/mp3/Work/Female Warriors - Two Steps From Hell.mp3">Female Warriors</a></li>
                 <li><a href="/mp3/Work/Two Steps From Hell - Strength of a Thousand Men.mp3">Strength of a Thousand Men</a></li>
                 <li><a href="/mp3/Work/Two Steps From Hell - Strength of a Thousand Men.mp3">Strength of a Thousand Men</a></li>
                 <li><a href="/mp3/Work/Two Steps From Hell - Strength of a Thousand Men.mp3">Strength of a Thousand Men</a></li>
@@ -76,8 +80,9 @@
                 <!-- Add more tracks as needed -->
             </ol>
         </div>
-    </div>
+    </section>
 
+    <!-- Audio Player -->
     <audio controls id="audioPlayer">
         <source src="" type="audio/mp3">
         Your browser does not support the audio element.
@@ -85,43 +90,44 @@
 </div>
 
 <script>
+    // Audio player initialization
     const audioPlayer = document.getElementById('audioPlayer');
     const tabButtons = document.querySelectorAll('.tab-button');
     const playlists = document.querySelectorAll('.playlist');
     let currentTrackIndex = 0;
 
-    // Switch tabs
+    // Tab navigation
     tabButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', () => {
             tabButtons.forEach(btn => btn.classList.remove('active'));
             playlists.forEach(playlist => playlist.classList.add('hidden'));
 
-            this.classList.add('active');
-            const playlistId = this.getAttribute('data-playlist');
+            button.classList.add('active');
+            const playlistId = button.getAttribute('data-playlist');
             document.getElementById(playlistId).classList.remove('hidden');
         });
     });
 
-    // Load and play a specific track
+    // Load and play track
     function loadTrack(link) {
         audioPlayer.src = link.href;
         audioPlayer.play();
     }
 
-    // Set up track event listeners for each playlist
+    // Event listeners for track links
     playlists.forEach(playlist => {
         const links = playlist.querySelectorAll('a');
         links.forEach((link, index) => {
-            link.addEventListener('click', function(event) {
+            link.addEventListener('click', (event) => {
                 event.preventDefault();
                 currentTrackIndex = index;
-                loadTrack(this);
+                loadTrack(link);
             });
         });
     });
 
     // Auto-play next track
-    audioPlayer.addEventListener('ended', function() {
+    audioPlayer.addEventListener('ended', () => {
         const activePlaylist = document.querySelector('.playlist:not(.hidden)');
         const links = activePlaylist.querySelectorAll('a');
         currentTrackIndex++;
@@ -133,6 +139,5 @@
         }
     });
 </script>
-
 </body>
 </html>
