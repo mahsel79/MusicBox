@@ -15,5 +15,14 @@ java -version
 sudo apt install -y maven
 mvn -version
 
+```
 
+## 2. Move mp3 folder to /var/www
+
+```bash
+sudo mv /home/neo/MusicBox/mp3 /var/www/mp3
+sudo chown -R www-data:www-data /var/www/mp3
+sudo chmod -R 755 /var/www/mp3
+
+```
 
